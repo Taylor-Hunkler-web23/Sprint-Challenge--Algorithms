@@ -5,10 +5,10 @@
 a)This run time is O(n) Linear. As n increases the run time will also increase.
 
 
-b)This runtime is. There is a loop and a nested loop.
+b)This runtime is O(n log n). There is a loop running O(n) and a inner loop.
 
 
-c)This run time is O(n) Linear. It runs (number of bunnies) times. It is recursive.
+c)This run time is O(n) Linear. It runs (n) times. It is recursive.
 
 ## Exercise II
 
