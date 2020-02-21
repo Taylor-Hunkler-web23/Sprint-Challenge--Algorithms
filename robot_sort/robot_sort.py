@@ -92,12 +92,16 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+#robot needs to pick up item and compare it with next to see bigger or saller and swap
+#light for
     def sort(self):
-        """
-        Sort the robot's list.
-        """
-        # Fill this out
-        pass
+       #move robot right
+        while self.can_move_right():
+            self.move_right()
+    #check if item is larger, if it is, swap item
+            if self.compare_item()==1:
+                self.swap_item()
+
 
 
 if __name__ == "__main__":
