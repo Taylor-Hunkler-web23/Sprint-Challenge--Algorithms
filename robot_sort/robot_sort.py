@@ -92,13 +92,46 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+#robot needs to pick up item and compare it with next to see bigger or smaller and swap
+#light for determinig if sort complete
     def sort(self):
-        """
-        Sort the robot's list.
-        """
-        # Fill this out
-        pass
+        # turn light on to start sorting
+        self.set_light_on()
 
+        #run code becuase light is on 
+        while self.light_is_on():
+            # turn the light off so that if there is no more sorting to complete, code finishes
+            self.set_light_off()
+
+       #move robot right
+            while self.can_move_right():
+                self.swap_item()
+                self.move_right()
+    #check if item is larger
+                if self.compare_item()==1:
+                    # if it is, swap item
+                    self.swap_item()
+                    #turn light back on because still sorting
+                    self.set_light_on
+# swap initial item
+                self.move_left()
+                self.swap_item()
+                self.move_right()
+
+#Move robot left
+            while self.can_move_left():
+                self.swap_item()
+                self.move_left()
+
+    #check if item is smaller, if it is, swap item
+                if self.compare_item() == -1:
+                    self.swap_item()
+                    #turn light on because still sorting
+                    self.set_light_on()
+# swap original item
+                self.move_right()
+                self.swap_item()
+                self.move_left()
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
